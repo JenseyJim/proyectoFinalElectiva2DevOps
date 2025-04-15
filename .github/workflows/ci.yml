@@ -22,5 +22,8 @@ jobs:
       - name: Instalar dependencias
         run: npm install
 
-      - name: Ejecutar prueba unitaria con npx
-        run: npx jest
+      - name: Dar permisos de ejecución a Jest
+        run: chmod +x node_modules/.bin/jest
+
+      - name: Ejecutar prueba unitaria desde node_modules
+        run: node_modules/.bin/jest
